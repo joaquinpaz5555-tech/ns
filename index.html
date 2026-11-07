@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>JQ TECH · Servicio técnico de confianza</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap">
+<style>
+:root{--c1:#00e5ff;--c2:#a45cff;--c3:#39ff14;--tx:#e8f1ff;--mut:#9fb3d9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:#02030a;color:var(--tx);font-family:Rajdhani,system-ui,sans-serif;font-size:18px;line-height:1.45;overflow-x:hidden}
+h1,h2,h3{font-family:Orbitron,Impact,sans-serif;margin:0}
+a{color:inherit;text-decoration:none}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,#02030acc 100%),repeating-linear-gradient(#0000 0 3px,#0000001f 3px 4px)}
+main{position:relative;z-index:2;opacity:0;transform:scale(.96);transition:1.6s .3s}
+body.in main{opacity:1;transform:none}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+section{padding:60px 0}
+.tag{color:var(--c1);font-weight:700;letter-spacing:4px;font-size:13px;text-transform:uppercase}
+h2{font-size:clamp(24px,6vw,38px);margin:6px 0 10px;text-shadow:0 0 20px #00e5ffaa}
+.sub{color:var(--mut);max-width:620px;margin:0 0 26px}
+.hero{min-height:92vh;display:flex;align-items:center;text-align:center}
+h1.big{font-size:clamp(46px,14vw,120px);font-weight:900;line-height:1;background:linear-gradient(90deg,var(--c1),#fff,var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px #00e5ffbb)}
+.lead{font-size:clamp(19px,4.5vw,26px);max-width:640px;margin:16px auto 26px;text-shadow:0 2px 12px #000}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:12px;font-family:Orbitron,sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;border:2px solid var(--c1);color:var(--c1);background:#00101acc;box-shadow:0 0 18px #00e5ff66,inset 0 0 12px #00e5ff22;transition:.2s;cursor:pointer}
+.btn:hover{background:var(--c1);color:#001018}
+.btn.g{border-color:var(--c3);color:var(--c3);box-shadow:0 0 18px #39ff1466,inset 0 0 12px #39ff1422}
+.btn.g:hover{background:var(--c3);color:#031a00}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.p,.card,.box,.step{background:#050a1cc4;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid #00e5ff40;border-radius:16px;box-shadow:0 0 22px #00e5ff1f}
+.card{padding:20px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--c1);box-shadow:0 0 30px #00e5ff66}
+.ic{font-size:32px;filter:drop-shadow(0 0 8px var(--c1))}
+.card h3{font-size:15px;margin:10px 0 6px}
+.card p{margin:0;color:var(--mut)}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:flex;gap:16px;padding:16px;border-left:4px solid var(--c2);counter-increment:s}
+.step::before{content:counter(s);font-family:Orbitron,sans-serif;font-weight:900;font-size:26px;color:var(--c1);text-shadow:0 0 12px var(--c1);min-width:34px}
+.step b{display:block;font-size:20px}.step span{color:var(--mut)}
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.box{padding:22px;border-color:#a45cff66}
+.box h3{font-size:17px;color:#c9a3ff;margin-bottom:10px}
+.box ul{margin:0;padding-left:20px}.box li{margin:6px 0}
+.price{font-family:Orbitron,sans-serif;font-weight:900;font-size:clamp(42px,11vw,68px);color:var(--c3);text-shadow:0 0 26px #39ff14aa}
+.ct{text-align:center}
+.sp{width:100%;height:352px;border:0;border-radius:16px;background:#050a1c}
+.game{position:relative;overflow:hidden}
+.bd{position:absolute;top:12px;right:12px;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:99px;border:1px solid var(--c3);color:var(--c3)}
+.bd.s{border-color:var(--c2);color:#c9a3ff}
+.go{display:inline-block;margin-top:12px;font-weight:700;color:var(--c1)}
+.wa{display:inline-block;font-family:Orbitron,sans-serif;font-weight:900;font-size:clamp(26px,8vw,52px);padding:14px 26px;border-radius:16px;border:2px solid var(--c3);background:#031208cc;box-shadow:0 0 34px #39ff1499,inset 0 0 20px #39ff1433;text-shadow:0 0 14px var(--c3);margin:14px 0}
+.hrs{color:var(--mut)}
+footer{position:relative;z-index:2;padding:30px 0 100px;text-align:center;color:var(--mut);font-size:15px}
+#intro{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity 1.2s,visibility 1.2s}
+body.in #intro{opacity:0;visibility:hidden}
+#intro .k{letter-spacing:8px;color:var(--c1);font-size:14px;font-weight:700;margin-bottom:14px;animation:bl 2s infinite}
+#intro p{color:var(--mut);margin:14px 0 30px;font-size:20px;text-shadow:0 0 10px #000}
+#go{font-size:16px;padding:16px 38px;animation:gl 2s infinite}
+@keyframes bl{50%{opacity:.3}}
+@keyframes gl{50%{box-shadow:0 0 44px var(--c1),inset 0 0 20px #00e5ff55}}
+.ctl{position:fixed;z-index:5;right:16px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;cursor:pointer;border:2px solid var(--c1);background:#00101add;box-shadow:0 0 20px #00e5ff88;opacity:0;transition:.6s 1s}
+body.in .ctl{opacity:1}
+#mu{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+#wf{bottom:calc(16px + env(safe-area-inset-bottom,0px));border-color:var(--c3);box-shadow:0 0 22px #39ff14aa}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div class="vig"></div>
+
+<div id="intro">
+  <div class="k">BIENVENIDO</div>
+  <h1 class="big">JQ TECH</h1>
+  <p>Tu equipo en buenas manos</p>
+  <button class="btn" id="go">ENTRAR ⚡</button>
+  <div style="margin-top:18px;color:var(--mut);font-size:14px">🔊 Activá el sonido para la experiencia completa</div>
+</div>
+
+<main>
+<header class="hero"><div class="wrap">
+  <div class="tag">Servicio técnico · Cañuelas</div>
+  <h1 class="big" style="margin-top:10px">JQ TECH</h1>
+  <p class="lead">Tu Play o tu PC, como nuevas. Limpieza, pasta térmica, optimización y HEN. Servicio técnico de confianza.</p>
+  <div class="btns">
+    <a class="btn g" href="https://wa.me/5492226683920?text=Hola%20JQ%20TECH%2C%20quiero%20pedir%20un%20turno" target="_blank" rel="noopener">PEDÍ TU TURNO</a>
+    <a class="btn" href="#servicios">VER SERVICIOS</a>
+  </div>
+</div></header>
+
+<section id="servicios"><div class="wrap">
+  <div class="tag rv">Qué hacemos</div><h2 class="rv">Servicios</h2>
+  <p class="sub rv">Menos ruido, menos temperatura, más rendimiento y más vida útil para tu equipo.</p>
+  <div class="grid" id="srv"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="tag rv">Cómo funciona</div><h2 class="rv">El mantenimiento, paso a paso</h2>
+  <p class="sub rv">Así trabajo con tu consola o PC, de la entrada a la entrega.</p>
+  <div class="steps">
+    <div class="step rv"><div><b>Diagnóstico</b><span>Reviso el equipo, el ruido y las temperaturas antes de tocar nada.</span></div></div>
+    <div class="step rv"><div><b>Limpieza interna profunda</b><span>Saco polvo, pelusas y suciedad de coolers, fuente y disipadores.</span></div></div>
+    <div class="step rv"><div><b>Pasta térmica o metal líquido</b><span>Compuesto de alta calidad para que el calor se evacúe como corresponde.</span></div></div>
+    <div class="step rv"><div><b>Pads térmicos</b><span>Los reviso y, si hace falta, los reemplazo.</span></div></div>
+    <div class="step rv"><div><b>Prueba y entrega</b><span>Pruebo que quede silenciosa y fresca. Voy a buscar y entregar a domicilio.</span></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="tag rv">PlayStation 3</div><h2 class="rv">Instalación de HEN</h2>
+  <p class="sub rv">Instalo y actualizo HEN (última versión) para que tu PS3 quede lista para usar homebrew y tiendas.</p>
+  <div class="two">
+    <div class="box rv"><h3>Qué incluye</h3><ul><li>Instalación o actualización de HEN</li><li>Tiendas y herramientas homebrew</li><li>Explicación de cómo se activa y se usa</li></ul></div>
+    <div class="box rv"><h3>Antes de traerla</h3><ul><li>Se combina con limpieza y cambio de pasta</li><li>Consultame modelo y firmware por WhatsApp</li><li>También hago mantenimiento de PS4 y PS5</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap ct">
+  <div class="tag rv">Mantenimiento completo</div>
+  <div class="price rv">$35.000</div>
+  <p class="sub rv" style="margin:0 auto">Limpieza + pasta térmica. Efectivo, transferencia o billetera virtual.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="tag rv">Mientras esperás</div><h2 class="rv">Música</h2>
+  <p class="sub rv">La playlist del taller. Dale play y quedate un rato.</p>
+  <iframe class="sp rv" src="https://open.spotify.com/embed/playlist/0VdkY5NCQ6mfi2KrqVoO4j?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Playlist de Spotify"></iframe>
+  <div class="btns" style="margin-top:14px"><a class="btn g" href="https://open.spotify.com/playlist/0VdkY5NCQ6mfi2KrqVoO4j" target="_blank" rel="noopener">ABRIR EN SPOTIFY</a></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="tag rv">Mis proyectos</div><h2 class="rv">Webs de juegos retro</h2>
+  <p class="sub rv">Webs propias con emuladores, livianas para PCs y celulares de pocos recursos.</p>
+  <div class="grid" id="games"></div>
+</div></section>
+
+<section><div class="wrap ct">
+  <div class="tag rv">Escribinos</div><h2 class="rv">Pedí tu turno</h2>
+  <a class="wa rv" href="https://wa.me/5492226683920" target="_blank" rel="noopener">2226 68-3920</a>
+  <p class="hrs">Lun a Vie 13:00 – 23:00 · Sáb 13:00 – 22:00 · Dom cerrado</p>
+  <div class="btns" style="margin-top:14px"><a class="btn" href="https://www.instagram.com/__joa_.1" target="_blank" rel="noopener">INSTAGRAM</a></div>
+</div></section>
+</main>
+<footer>JQ TECH · Cañuelas · Tu equipo en buenas manos</footer>
+<div class="ctl" id="mu" title="Música">🔊</div>
+<a class="ctl" id="wf" href="https://wa.me/5492226683920" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+// ===== Datos editables =====
+var SERVICIOS=[["🪶","Limpieza interna y externa","Eliminación total de polvo y pelusas en coolers, fuentes y disipadores."],["💉","Pasta térmica y metal líquido","Compuesto de alta calidad para una refrigeración perfecta."],["🧊","Pads térmicos","Revisión y reemplazo si es necesario."],["⚡","Optimización de Windows","Más rendimiento y un sistema limpio y ágil."],["🖥️","Armado de PC","Armado, mantenimiento y puesta a punto."],["🎮","Mantenimiento PS3 · PS4 · PS5","Mantenimiento preventivo completo: consola silenciosa y como nueva."],["🔓","HEN en PS3","Instalación y actualización de HEN, con tiendas y homebrew."],["💻","Liberación de netbooks","Desbloqueo de netbooks de gobierno (Juana Manso, Conectar Igualdad)."]];
+// e:"ok" = online, e:"soon" = próximamente. Poné la URL en u
+var JUEGOS=[{n:"JQ Retro Hub",d:"Emulación retro en el navegador con EmulatorJS, liviana para equipos viejos.",e:"soon",u:""},{n:"Tu próxima web",d:"Acá va a aparecer el próximo emulador o colección de juegos.",e:"soon",u:""}];
+var s=document.getElementById("srv"),g=document.getElementById("games");
+SERVICIOS.forEach(function(x){var d=document.createElement("div");d.className="card rv";d.innerHTML='<div class="ic">'+x[0]+'</div><h3>'+x[1]+'</h3><p>'+x[2]+'</p>';s.appendChild(d)});
+JUEGOS.forEach(function(x){var d=document.createElement("div");d.className="card game rv";d.innerHTML='<span class="bd '+(x.e=="ok"?"":"s")+'">'+(x.e=="ok"?"ONLINE":"PRÓXIMAMENTE")+'</span><div class="ic">🕹️</div><h3>'+x.n+'</h3><p>'+x.d+'</p>'+(x.u?'<a class="go" href="'+x.u+'" target="_blank" rel="noopener">JUGAR →</a>':'');g.appendChild(d)});
+var els=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add("on")});
+
+// ===== Túnel de zoom infinito (estilo zoomquilt) =====
+var cv=document.getElementById("bg"),cx=cv.getContext("2d"),W,H,N=6,Q=2,T=[],z=0,last=0;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener("resize",rs);
+function R(a,b){return a+Math.random()*(b-a)}
+function tex(h){var S=640,c=document.createElement("canvas");c.width=c.height=S;var q=c.getContext("2d"),i,hh;
+q.fillStyle="hsl("+h+",80%,5%)";q.fillRect(0,0,S,S);q.globalCompositeOperation="lighter";q.lineWidth=2;q.shadowBlur=14;
+for(i=0;i<44;i++){hh=h+R(-70,70);q.strokeStyle="hsla("+hh+",100%,"+R(50,68)+"%,"+R(.3,.85)+")";q.shadowColor="hsl("+hh+",100%,60%)";var a=R(0,6.28);q.beginPath();q.arc(S/2+R(-S*.22,S*.22),S/2+R(-S*.22,S*.22),R(30,S*.6),a,a+R(.4,2.6));q.stroke()}
+for(i=0;i<70;i++){hh=h+R(-80,80);q.fillStyle="hsla("+hh+",100%,65%,"+R(.4,1)+")";q.shadowColor="hsl("+hh+",100%,60%)";var x=R(0,S),y=R(0,S);q.fillRect(x,y,R(2,5),R(2,5));if(i%5==0){q.fillRect(x,y,R(20,90),2)}}
+q.shadowBlur=0;q.globalCompositeOperation="destination-out";
+var m=q.createRadialGradient(S/2,S/2,S*.1,S/2,S/2,S*.26);m.addColorStop(0,"#000");m.addColorStop(1,"rgba(0,0,0,0)");q.fillStyle=m;q.fillRect(0,0,S,S);
+q.globalCompositeOperation="destination-in";m=q.createRadialGradient(S/2,S/2,S*.3,S/2,S/2,S*.5);m.addColorStop(0,"#000");m.addColorStop(1,"rgba(0,0,0,0)");q.fillStyle=m;q.fillRect(0,0,S,S);
+return c}
+for(var i=0;i<N;i++)T.push(tex(190+i*28));
+function draw(t){var dt=Math.min(t-last,60);last=t;z+=dt/4500;
+cx.globalAlpha=1;cx.fillStyle="#02030a";cx.fillRect(0,0,W,H);
+var base=Math.max(W,H)*.07,L=[],i,d;
+for(i=0;i<N;i++){d=(((z-i)%N)+N)%N;L.push([d,i])}
+L.sort(function(a,b){return a[0]-b[0]});
+L.forEach(function(l){d=l[0];var sz=base*Math.pow(Q,d),al=d<.8?d/.8:(d>N-1.6?(N-d)/1.6:1);
+cx.globalAlpha=Math.max(0,al);cx.save();cx.translate(W/2,H/2);cx.rotate(Math.sin(z*.4)*.12);cx.drawImage(T[l[1]],-sz/2,-sz/2,sz,sz);cx.restore()});
+requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+
+// ===== Música: musica.mp3 si existe; si no, sintetizador ambiente =====
+var AC,mg,au,muted=false,synOn=false;
+function synth(){if(synOn||!AC)return;synOn=true;
+mg=AC.createGain();mg.gain.value=muted?0:.5;mg.connect(AC.destination);
+var lp=AC.createBiquadFilter();lp.frequency.value=1800;var dl=AC.createDelay();dl.delayTime.value=.375;var fb=AC.createGain();fb.gain.value=.35;dl.connect(fb);fb.connect(dl);dl.connect(mg);lp.connect(mg);lp.connect(dl);
+var ch=[[57,60,64],[53,57,60],[48,52,55],[55,59,62]],st=0,nt=AC.currentTime+.1;
+function f(n){return 440*Math.pow(2,(n-69)/12)}
+function nn(n,t,d,ty,v,o2){var o=AC.createOscillator(),gg=AC.createGain();o.type=ty;o.frequency.value=f(n);gg.gain.setValueAtTime(0,t);gg.gain.linearRampToValueAtTime(v,t+.03);gg.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(gg);gg.connect(o2);o.start(t);o.stop(t+d+.05)}
+setInterval(function(){while(nt<AC.currentTime+.6){var c=ch[Math.floor(st/16)%4],i=st%16;
+if(i%4==0)nn(c[0]-24,nt,.9,"sine",.4,mg);
+if(i==0)c.forEach(function(n){nn(n,nt,3.8,"triangle",.07,mg)});
+nn(c[i%3]+(i%6<3?12:24),nt,.4,"sawtooth",.035,lp);
+nt+=.25;st++}},200)}
+document.getElementById("go").onclick=function(){
+document.body.classList.add("in");
+AC=new(window.AudioContext||window.webkitAudioContext)();if(AC.resume)AC.resume();
+au=new Audio("musica.mp3");au.loop=true;au.volume=.6;
+au.addEventListener("error",synth);
+var p=au.play();if(p&&p.catch)p.catch(function(){});
+setTimeout(function(){if(au.readyState==0||au.error)synth()},2500)};
+document.getElementById("mu").onclick=function(){muted=!muted;if(au)au.muted=muted;if(mg)mg.gain.value=muted?0:.5;this.textContent=muted?"🔇":"🔊"};
+</script>
+</body>
+</html>
